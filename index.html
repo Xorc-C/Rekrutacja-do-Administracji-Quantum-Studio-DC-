@@ -10,19 +10,19 @@
             font-family: Arial, sans-serif;
             padding: 20px;
         }
-        textarea, input[type="text"] {
+        textarea {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             padding: 10px;
             margin-top: 5px;
         }
         button {
-            padding: 12px 25px;
+            padding: 12px 30px;
             font-size: 16px;
             cursor: pointer;
         }
         .info {
-            margin-top: 20px;
+            margin-top: 25px;
             font-weight: bold;
             color: #cccccc;
         }
@@ -33,67 +33,70 @@
 <h1>Rekrutacja do Administracji Quantum Studio (DC)</h1>
 
 <form id="rekrutacjaForm">
-    <p><strong>Napisz swój nick:</strong></p>
-    <textarea id="nick" rows="2"></textarea>
 
-    <p><strong>Ile masz lat? (min. 13)</strong></p>
-    <textarea id="wiek" rows="2"></textarea>
+<p><strong>Napisz swój nick:</strong></p>
+<textarea id="nick" rows="2"></textarea>
 
-    <p><strong>Czy spełniasz wszystkie warunki?</strong></p>
-    <input type="radio" name="warunki" value="Tak" checked> Tak
-    <input type="radio" name="warunki" value="Nie"> Nie
+<p><strong>Ile masz lat? (minimum 13)</strong></p>
+<textarea id="wiek" rows="2"></textarea>
 
-    <p><strong>Opowiedz coś o sobie (min. 50 słów)</strong></p>
-    <textarea id="oSobie" rows="5"></textarea>
+<p><strong>Czy spełniasz wszystkie warunki?</strong></p>
+<input type="radio" name="warunki" value="Tak" checked> Tak
+<input type="radio" name="warunki" value="Nie"> Nie
 
-    <p><strong>Czym się wyróżniasz?</strong></p>
-    <textarea id="wyroznienie" rows="3"></textarea>
+<p><strong>Opowiedz nam coś o sobie (minimum 50 słów)</strong></p>
+<textarea id="oSobie" rows="5"></textarea>
 
-    <p><strong>Czy masz sprawny mikrofon?</strong></p>
-    <input type="radio" name="mikrofon" value="Tak" checked> Tak
-    <input type="radio" name="mikrofon" value="Nie"> Nie
+<p><strong>Czym byś się wyróżniał/a na serwerze?</strong></p>
+<textarea id="wyroznienie" rows="3"></textarea>
 
-    <p><strong>Dlaczego Ty nadajesz się na to stanowisko? (min. 40 słów)</strong></p>
-    <textarea id="dlaczego" rows="5"></textarea>
+<p><strong>Czy posiadasz sprawny mikrofon?</strong></p>
+<input type="radio" name="mikrofon" value="Tak" checked> Tak
+<input type="radio" name="mikrofon" value="Nie"> Nie
 
-    <p><strong>Jak oceniasz znajomość regulaminu (0–10)?</strong></p>
-    <input type="radio" name="regulamin" value="0">0
-    <input type="radio" name="regulamin" value="1">1
-    <input type="radio" name="regulamin" value="2">2
-    <input type="radio" name="regulamin" value="3">3
-    <input type="radio" name="regulamin" value="4">4
-    <input type="radio" name="regulamin" value="5">5
-    <input type="radio" name="regulamin" value="6">6
-    <input type="radio" name="regulamin" value="7">7
-    <input type="radio" name="regulamin" value="8">8
-    <input type="radio" name="regulamin" value="9">9
-    <input type="radio" name="regulamin" value="10">10
+<p><strong>Dlaczego akurat Ty nadajesz się na to stanowisko? (minimum 40 słów)</strong></p>
+<textarea id="dlaczego" rows="5"></textarea>
 
-    <p><strong>Czy byłeś karany na serwerze?</strong></p>
-    <input type="radio" name="kara" value="Tak"> Tak
-    <input type="radio" name="kara" value="Nie" checked> Nie
+<p><strong>Jak oceniasz swoją znajomość regulaminu (0–10)?</strong></p>
+<input type="radio" name="regulamin" value="0">0
+<input type="radio" name="regulamin" value="1">1
+<input type="radio" name="regulamin" value="2">2
+<input type="radio" name="regulamin" value="3">3
+<input type="radio" name="regulamin" value="4">4
+<input type="radio" name="regulamin" value="5">5
+<input type="radio" name="regulamin" value="6">6
+<input type="radio" name="regulamin" value="7">7
+<input type="radio" name="regulamin" value="8">8
+<input type="radio" name="regulamin" value="9">9
+<input type="radio" name="regulamin" value="10">10
 
-    <p><strong>Czy możesz traktować kolegę tak samo jak innych graczy?</strong></p>
-    <textarea id="kolega" rows="3"></textarea>
+<p><strong>Czy byłeś kiedykolwiek karany na serwerze?</strong></p>
+<input type="radio" name="kara" value="Tak"> Tak
+<input type="radio" name="kara" value="Nie" checked> Nie
 
-    <p><strong>Jak zareagujesz na negatywne wypowiedzi o serwerze?</strong></p>
-    <textarea id="negatywne" rows="3"></textarea>
+<p><strong>Czy możesz traktować swojego kolegę tak samo jak innych graczy?</strong></p>
+<textarea id="kolega" rows="3"></textarea>
 
-    <p><strong>Co zrobisz, gdy nie będziesz wiedział jak postąpić?</strong></p>
-    <textarea id="nieWiem" rows="3"></textarea>
+<p><strong>Jak zachowasz się, gdy gracz będzie negatywnie wypowiadał się o serwerze?</strong></p>
+<textarea id="negatywne" rows="3"></textarea>
 
-    <p><strong>Co zrobisz, gdy gracz będzie Cię prowokował?</strong></p>
-    <textarea id="prowokacja" rows="3"></textarea>
+<p><strong>Co zrobisz, gdy nie będziesz wiedział jak postąpić z graczem?</strong></p>
+<textarea id="nieWiem" rows="3"></textarea>
 
-    <p><strong>Czy pełniłeś podobną funkcję na innych serwerach? (opcjonalne)</strong></p>
-    <textarea id="inne" rows="4"></textarea>
+<p><strong>Co zrobisz, gdy gracz będzie Cię prowokował?</strong></p>
+<textarea id="prowokacja" rows="3"></textarea>
 
-    <p class="info">
-        Widzimy się na rekrutacji głosowej!<br>
-        Jeżeli przyjmiemy cię, zgłoś się na ticket i dogadaj się kiedy taka rekrutacja będzie robiona!
-    </p>
+<p><strong>Czy pełniłeś podobną funkcję na innych serwerach? (opcjonalne)</strong></p>
+<textarea id="inne" rows="4"></textarea>
 
-    <button type="submit">Wyślij odpowiedzi</button>
+<!-- TEKST INFORMACYJNY -->
+<p class="info">
+Widzimy się na rekrutacji głosowej!<br>
+Jeżeli przyjmiemy cię, zgłoś się na ticket i dogadaj się kiedy taka rekrutacja będzie robiona!
+</p>
+
+<button type="submit">Wyślij odpowiedzi</button>
+
 </form>
 
 <script>
@@ -102,45 +105,40 @@ const apiURL = "https://gentle-night-cb86.tyxxnombodi.workers.dev/";
 document.getElementById("rekrutacjaForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    // Zbieranie wszystkich danych formularza
     const data = {
         nick: document.getElementById("nick").value,
         wiek: document.getElementById("wiek").value,
         warunki: document.querySelector('input[name="warunki"]:checked').value,
         oSobie: document.getElementById("oSobie").value,
-        twoje_wyroznienie: document.getElementById("twoje_wyroznienie").value,
+        Twoje_wyroznienie: document.getElementById("Twoje").value,
         mikrofon: document.querySelector('input[name="mikrofon"]:checked').value,
-        dlaczego_nadajesz_sie: document.getElementById("dlaczego_nadajesz_sie").value,
+        dlaczego: document.getElementById("dlaczego").value,
         regulamin: document.querySelector('input[name="regulamin"]:checked').value,
         kara: document.querySelector('input[name="kara"]:checked').value,
-        traktowanie_kolegi: document.getElementById("traktowanie_kolegi").value,
-        negatywne_opinie_o_serwerze : document.getElementById("negatywne_opinie_o_serwerze").value,
-        nieWiem_co_zrobic_w_danej_sytuacji: document.getElementById("nieWiem_co_zrobic_w_danej_sytuacji").value,
+        Traktowanie_kolegi: document.getElementById("traktowanie").value,
+        negatywne: document.getElementById("negatywne").value,
+        nieWiem: document.getElementById("nieWiem").value,
         prowokacja: document.getElementById("prowokacja").value,
-        praca_na_innych_serverach: document.getElementById("praca_na_innych_serverach").value
+        praca_na_innych_serwerach: document.getElementById("praca").value
     };
 
-    // Wysłanie do Cloudflare Worker
-    const res = await fetch(apiURL, {
+    const response = await fetch(apiURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     });
 
-    if (res.ok) {
-        alert("Formularz wysłany! Powodzenia 👋");
+    if (response.ok) {
+        alert("Formularz wysłany! Powodzenia 💙");
         this.reset();
     } else {
-        alert("Błąd wysyłania formularza");
+        alert("Wystąpił błąd podczas wysyłania formularza.");
     }
 });
 </script>
 
 </body>
 </html>
-
-
-
 
 
 
