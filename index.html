@@ -35,27 +35,27 @@
 <form id="rekrutacjaForm">
 
 <p><strong>Napisz swój nick:</strong></p>
-<textarea id="nick" rows="2"></textarea>
+<textarea id="nick" rows="2" required></textarea>
 
 <p><strong>Ile masz lat? (minimum 13)</strong></p>
-<textarea id="wiek" rows="2"></textarea>
+<textarea id="wiek" rows="2" required></textarea>
 
 <p><strong>Czy spełniasz wszystkie warunki?</strong></p>
 <input type="radio" name="warunki" value="Tak" checked> Tak
 <input type="radio" name="warunki" value="Nie"> Nie
 
 <p><strong>Opowiedz nam coś o sobie (minimum 50 słów)</strong></p>
-<textarea id="oSobie" rows="5"></textarea>
+<textarea id="oSobie" rows="5" required></textarea>
 
 <p><strong>Czym byś się wyróżniał/a na serwerze?</strong></p>
-<textarea id="wyroznienie" rows="3"></textarea>
+<textarea id="wyroznienie" rows="3" required></textarea>
 
 <p><strong>Czy posiadasz sprawny mikrofon?</strong></p>
 <input type="radio" name="mikrofon" value="Tak" checked> Tak
 <input type="radio" name="mikrofon" value="Nie"> Nie
 
 <p><strong>Dlaczego akurat Ty nadajesz się na to stanowisko? (minimum 40 słów)</strong></p>
-<textarea id="dlaczego" rows="5"></textarea>
+<textarea id="dlaczego" rows="5" required></textarea>
 
 <p><strong>Jak oceniasz swoją znajomość regulaminu (0–10)?</strong></p>
 <input type="radio" name="regulamin" value="0">0
@@ -75,21 +75,20 @@
 <input type="radio" name="kara" value="Nie" checked> Nie
 
 <p><strong>Czy możesz traktować swojego kolegę tak samo jak innych graczy?</strong></p>
-<textarea id="kolega" rows="3"></textarea>
+<textarea id="kolega" rows="3" required></textarea>
 
 <p><strong>Jak zachowasz się, gdy gracz będzie negatywnie wypowiadał się o serwerze?</strong></p>
-<textarea id="negatywne" rows="3"></textarea>
+<textarea id="negatywne" rows="3" required></textarea>
 
 <p><strong>Co zrobisz, gdy nie będziesz wiedział jak postąpić z graczem?</strong></p>
-<textarea id="nieWiem" rows="3"></textarea>
+<textarea id="nieWiem" rows="3" required></textarea>
 
 <p><strong>Co zrobisz, gdy gracz będzie Cię prowokował?</strong></p>
-<textarea id="prowokacja" rows="3"></textarea>
+<textarea id="prowokacja" rows="3" required></textarea>
 
 <p><strong>Czy pełniłeś podobną funkcję na innych serwerach? (opcjonalne)</strong></p>
 <textarea id="inne" rows="4"></textarea>
 
-<!-- TEKST INFORMACYJNY -->
 <p class="info">
 Widzimy się na rekrutacji głosowej!<br>
 Jeżeli przyjmiemy cię, zgłoś się na ticket i dogadaj się kiedy taka rekrutacja będzie robiona!
@@ -106,39 +105,45 @@ document.getElementById("rekrutacjaForm").addEventListener("submit", async funct
     e.preventDefault();
 
     const data = {
-        nick: document.getElementById("nick").value,
-        wiek: document.getElementById("wiek").value,
-        warunki: document.querySelector('input[name="warunki"]:checked').value,
-        oSobie: document.getElementById("oSobie").value,
-        Twoje_wyroznienie: document.getElementById("Twoje").value,
-        mikrofon: document.querySelector('input[name="mikrofon"]:checked').value,
-        dlaczego: document.getElementById("dlaczego").value,
-        regulamin: document.querySelector('input[name="regulamin"]:checked').value,
-        kara: document.querySelector('input[name="kara"]:checked').value,
-        Traktowanie_kolegi: document.getElementById("traktowanie").value,
-        negatywne: document.getElementById("negatywne").value,
-        nieWiem: document.getElementById("nieWiem").value,
-        prowokacja: document.getElementById("prowokacja").value,
-        praca_na_innych_serwerach: document.getElementById("praca").value
+        nick: document.getElementById("nick").value.trim(),
+        wiek: document.getElementById("wiek").value.trim(),
+        warunki: document.querySelector('input[name="warunki"]:checked')?.value || "-",
+        oSobie: document.getElementById("oSobie").value.trim(),
+        wyroznienie: document.getElementById("wyroznienie").value.trim(),
+        mikrofon: document.querySelector('input[name="mikrofon"]:checked')?.value || "-",
+        dlaczego: document.getElementById("dlaczego").value.trim(),
+        regulamin: document.querySelector('input[name="regulamin"]:checked')?.value || "-",
+        kara: document.querySelector('input[name="kara"]:checked')?.value || "-",
+        kolega: document.getElementById("kolega").value.trim(),
+        negatywne: document.getElementById("negatywne").value.trim(),
+        nieWiem: document.getElementById("nieWiem").value.trim(),
+        prowokacja: document.getElementById("prowokacja").value.trim(),
+        inne: document.getElementById("inne").value.trim()
     };
 
-    const response = await fetch(apiURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    });
+    try {
+        const res = await fetch(apiURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
 
-    if (response.ok) {
-        alert("Formularz wysłany! Powodzenia 💙");
-        this.reset();
-    } else {
-        alert("Wystąpił błąd podczas wysyłania formularza.");
+        if (res.ok) {
+            alert("Formularz wysłany! Powodzenia 💙");
+            this.reset();
+        } else {
+            alert("Błąd wysyłania formularza.");
+        }
+    } catch (err) {
+        alert("Błąd połączenia z serwerem.");
     }
 });
 </script>
 
 </body>
 </html>
+
+
 
 
 
