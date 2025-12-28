@@ -108,16 +108,16 @@ document.getElementById("rekrutacjaForm").addEventListener("submit", async funct
         wiek: document.getElementById("wiek").value,
         warunki: document.querySelector('input[name="warunki"]:checked').value,
         oSobie: document.getElementById("oSobie").value,
-        wyroznienie: document.getElementById("wyroznienie").value,
+        twoje_wyroznienie: document.getElementById("twoje_wyroznienie").value,
         mikrofon: document.querySelector('input[name="mikrofon"]:checked').value,
-        dlaczego: document.getElementById("dlaczego").value,
+        dlaczego_nadajesz_sie: document.getElementById("dlaczego_nadajesz_sie").value,
         regulamin: document.querySelector('input[name="regulamin"]:checked').value,
         kara: document.querySelector('input[name="kara"]:checked').value,
-        kolega: document.getElementById("kolega").value,
-        negatywne: document.getElementById("negatywne").value,
-        nieWiem: document.getElementById("nieWiem").value,
+        traktowanie_kolegi: document.getElementById("traktowanie_kolegi").value,
+        negatywne_opinie_o_serwerze : document.getElementById("negatywne_opinie_o_serwerze").value,
+        nieWiem_co_zrobic_w_danej_sytuacji: document.getElementById("nieWiem_co_zrobic_w_danej_sytuacji").value,
         prowokacja: document.getElementById("prowokacja").value,
-        inne: document.getElementById("inne").value
+        praca_na_innych_serverach: document.getElementById("praca_na_innych_serverach").value
     };
 
     // Wysłanie do Cloudflare Worker
@@ -138,6 +138,7 @@ document.getElementById("rekrutacjaForm").addEventListener("submit", async funct
 
 </body>
 </html>
+
 
 
 
